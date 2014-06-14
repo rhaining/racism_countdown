@@ -90,6 +90,7 @@ function updateRacismCounter(){
 		// questionElt.style.display = 'none';
 		questionElt.innerHTML = "game over";
 		racismCounterElt.innerHTML = 6;
+		displayArticles();
 	}
 
 	racismCalendarElt.innerHTML = currentRacismDate();
@@ -234,6 +235,24 @@ function readableMonth(monthValue){
 	}
 }
 
+function displayArticles(){
+	var articlesWrapperElt = document.getElementById("articles_wrapper");
+	articlesWrapperElt.style.display = "inherit";
+	var articlesElt = document.getElementById("articles");
+	var buffer = '';
+	for(var i=0; i < articles.length; i++){
+		var article = articles[i]["title"];
+		var href = article["href"];
+		var text = article["text"];
+		var row = "<a href='" + href + "'>" + text + "</a><br/>";
+		buffer += row;
+	}
+	articlesElt.innerHTML = buffer;
+}
+
+
+/////// data
+
 var questions = [
   {
     "id":1,
@@ -326,9 +345,71 @@ var questions = [
 
 
 
-
-
-
-
-
-
+var articles = [
+      {
+        "title": {
+          "text": "Probate trial set for Donald Sterling",
+          "href": "http://www.chicagotribune.com/sports/basketball/bulls/chi-trial-will-decide-which-sterling-controls-la-clippers-20140611,0,4249248.story"
+        }
+      },
+      {
+        "title": {
+          "text": "Paula Deen launching online cooking network",
+          "href": "http://www.chicagotribune.com/features/food/chi-paula-deen-network-online-20140611,0,2240994.story"
+        }
+      },
+      {
+        "title": {
+          "text": "Where are players in George Zimmerman trial, a year later?",
+          "href": "http://www.chicagotribune.com/news/ch-george-zimmerman-trial-one-year-later-20140607,0,3489606.story"
+        }
+      },
+      {
+        "title": {
+          "text": "Tinley Park police reports: Man punched for aiding woman",
+          "href": "http://www.chicagotribune.com/news/local/suburbs/tinley_park/ct-police-blotter-tinley-park-tl-s-xxxx-20140603-21,0,2378976.story"
+        }
+      },
+      {
+        "title": {
+          "text": "Teacher's lesson about racism offends his bosses",
+          "href": "http://www.chicagotribune.com/news/columnists/kass/ct-kass-met-0605-20140605,0,7689455.column"
+        }
+      },
+      {
+        "title": {
+          "text": "Donald Sterling accused of racist, sexist remarks in new lawsuit",
+          "href": "http://www.chicagotribune.com/sports/basketball/bulls/chi-donald-sterling-accused-of-racist-sexist-remarks-20140603,0,3203338.story"
+        }
+      },
+      {
+        "title": {
+          "text": "Clippers owner Donald Sterling will sue NBA for $1 billion",
+          "href": "http://www.chicagotribune.com/news/chi-clippers-donald-sterling-sues-nba-20140530,0,5041780.story"
+        }
+      },
+      {
+        "title": {
+          "text": "Donald Sterling plans to sue the NBA",
+          "href": "http://www.chicagotribune.com/sports/basketball/bulls/chi-donald-sterling-sue-nba-20140530,0,600145.story"
+        }
+      },
+      {
+        "title": {
+          "text": "Meet the black officer who went undercover as a KKK member",
+          "href": "http://www.chicagotribune.com/news/plus/chi-wp-theroot-black-officer-kkk-20140523,0,7002089.story"
+        }
+      },
+      {
+        "title": {
+          "text": "Donald Sterling hands over control of Clippers to wife: reports",
+          "href": "http://www.chicagotribune.com/news/chi-donald-sterling-clippers-20140523,0,5856995.story"
+        }
+      },
+      {
+        "title": {
+          "text": "Redskins president Allen defends team name",
+          "href": "http://www.chicagotribune.com/sports/football/bears/chi-redskins-president-defends-name-20140524,0,5955549.story"
+        }
+      }
+    ];
