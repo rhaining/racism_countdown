@@ -12,34 +12,56 @@
 #articles_wrapper{
 	display: none;
 }
+
+.cellspot{
+	border-radius:25px;
+	height: 500px;
+}
+
+.greybg{
+	background-color:#4e5d6c;
+}
+.greybg2{
+	background-color:#6C5D4E;
+}
+.rowpad{
+	padding:10px;
+}
+
+body {
+	padding: 100px;
+}
 </style>
 <link rel="stylesheet" href="bootstrap.min.css">
 </head>
 <body>
 
 <h1>Am I Racist Yet?</h1>
-<div class="jumbotron">
-<h4>question <span id="racism_counter"></span> of 6</h4>
+<div class="row rowpad">
+	<div class="col-md-8 greybg cellspot">
+		<h4>question <span id="racism_counter"></span> of 6</h4>
+			<div id="question_wrapper">
+				<h3 id="question">Is this a sample question?</h3>
+				<div id="answers"></div>
+			</div>
+	</div>
+	<div class="col-md-4 greybg2 cellspot">
+		<h3>current status:</h3>
+		<blockquote>
+			<span id="racism_status">Based on your current location <strong>(NYC)</strong><br>
+			the current time <strong>(<span id="current_time"></span>)</strong><br> and your skin tone <strong>(lovely)</strong><br> we've determined you're: <strong><span class="highlight">post racial</span></strong></span>
+		</blockquote>
+		<br/>
+		<h2>
+		<div id="racism_timer"></div>
+		<div id="racism_calendar" class="highlight"></div>
+	</h2>
 
-<div id="question_wrapper">
-<h3 id="question">Is this a sample question?</h3>
-<div id="answers"></div>
-</div>
-</div>
-
-
-
-<h3>current status:
-<span id="racism_status">Based on your current location (NYC), the current time (<span id="current_time"></span>), and your skin tone (lovely), we've determined you're: <span class="highlight">post racial</span>. Dare to play?</span>
-<br/><br/>
-<div id="racism_timer"></div>
-<div id="racism_calendar" class="highlight"></div>
-</h3>
-
-<div id="articles_wrapper">
-<h3>A few articles about racism to help you out</h3>
-<div id="articles"></div>
-</div>
+		<div id="articles_wrapper">
+		<h3>A few articles about racism to help you out</h3>
+		<div id="articles"></div>
+		</div>
+	</div>
 
 
 <br/>
