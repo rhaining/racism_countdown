@@ -254,13 +254,16 @@ function displayArticles(){
 /////// data
 
 var questions = [
+/*
   {
     "id":1,
-    "question":"How many friends do you have of each of the following races?",
+    "question":"How many friends do you have of a different race?",
     "answers" : [
       "0", "1-10", "11-1000", "prefer not to answer"
     ]
   },
+  */
+/*
   {
     "id":2,
     "question":"What is your age?",
@@ -269,6 +272,17 @@ var questions = [
     ],
     "images" : [
       "shirleytemple.gif", "aubreyplaza.gif", "billmurray.gif", "beaarthur.gif"
+    ]
+  },
+  */
+    {
+    "id":9,
+    "question":"Who do you most look up to?",
+    "answers" : [
+      "Donald Sterling", "Paula Deen", "Jeremiah Wright", "Justin Bieber"
+    ],
+    "images" : [
+      "donaldsterling.gif", "pauladeen.gif", "jeremiahwright.gif", "justinbieber.gif"
     ]
   },
   {
@@ -291,24 +305,7 @@ var questions = [
       "wizardofoz.gif", "parkinglot.gif", "lightbulb.gif", "centennial.gif"
     ]
   },
-  {
-    "id":5,
-    "question":"Which backstreet boy are you? (Link to quiz if you need help)",
-    "answers" : [
-      "AJ", "Howie", "Nick", "Kevin", "Brian"
-    ]
-  },
-  {
-    "id":6,
-    "question":"You see a trolley barrelling down a hill. There are 5 Native Americans tied to the tracks. If you pull a lever, the trolley will change tracks and run over a Latina woman instead. What do you do?",
-    "answers" : [
-      "Pull the lever and murder the Latina woman",
-      "Don't touch the lever and murder the Native Americans"
-    ],
-    "images" : [
-      "sofiavergara.gif", "nativeamerican.gif"
-    ]
-  },
+
   {
     "id":7,
     "question":"Who do you most identify with?",
@@ -319,6 +316,15 @@ var questions = [
       "drphil.gif", "oprah.gif", "goofy.gif"
     ]
   },
+  /*
+  {
+    "id":5,
+    "question":"Which backstreet boy are you? (Link to quiz if you need help)",
+    "answers" : [
+      "AJ", "Howie", "Nick", "Kevin", "Brian"
+    ]
+  },
+*/
   {
     "id":8,
     "question":"Are you racist?",
@@ -329,17 +335,19 @@ var questions = [
       "yes.gif", "no.gif"
     ]
   },
-  {
-    "id":9,
-    "question":"Who do you most look up to?",
+
+  
+    {
+    "id":6,
+    "question":"You see a trolley barrelling down a hill. There are 5 Native Americans tied to the tracks. If you pull a lever, the trolley will change tracks and run over a Latina woman instead. What do you do?",
     "answers" : [
-      "Donald Sterling", "Paula Deen", "Jeremiah Wright", "Justin Bieber"
+      "Pull the lever and murder the Latina woman",
+      "Don't touch the lever and murder the Native Americans"
     ],
     "images" : [
-      "donaldsterling.gif", "pauladeen.gif", "jeremiahwright.gif", "justinbieber.gif"
+      "sofiavergara.gif", "nativeamerican.gif"
     ]
   }
-  
 ]
 
 
