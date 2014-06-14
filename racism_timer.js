@@ -33,7 +33,7 @@ function updateQuestion(){
 		var imageBuffer = '';
 		if(question["images"]){
 			var imageURL = question["images"][i];
-			imageBuffer = "<img src='images/" + imageURL + "' width='100'/> ";
+			imageBuffer = "<img src='images/" + imageURL + "'/> ";
 		}
 		answersBuffer += "<input type='radio' name='question' onclick='goRacism();'/> " + imageBuffer + answer + "<br/>";
 	}
