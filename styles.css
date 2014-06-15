@@ -1,6 +1,7 @@
 body {
 	padding: 20px 3%;
 	color: #fff;
+	background-color: #222;
 	font-family: Baskerville;
 }
 
@@ -28,11 +29,11 @@ body {
 	font-size: 50px;
 }
 #articles_wrapper a{
-	color: #ddd;
+	color: #00A7FD;
 	text-decoration: none;
 }
 #articles_wrapper a:hover{
-	color: #D3D000;
+	color: #007BBC;
 	background-color: #333;
 }
 #articles_wrapper .article_header{
@@ -51,6 +52,13 @@ body {
 	padding-bottom: 10px;
 }
 
+.whitebg{
+	background-color: #E5E5E5;
+	color: #333;
+}
+.darkgreybg{
+	background-color: #6E6E6E;
+}
 .purplebg{
 	background-color: #878126;
 }
@@ -98,7 +106,7 @@ body {
 	font-size: 50px;
 	line-height: 55px;
 	margin-bottom: 10px;
-	color: #fff;
+	/*color: #fff;*/
 }
 .answer{
 	float: left;
@@ -117,7 +125,7 @@ body {
 	line-height: 35px;
 	max-width: 235px;
 	cursor: pointer;
-	color: #fff;
+	/*color: #fff;*/
 }
 .answer label:hover{
 	color: #aaa;
