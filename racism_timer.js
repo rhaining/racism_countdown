@@ -191,7 +191,10 @@ function goRacism(){
 	updateRacismCounter();
 	updateQuestion();
 	updateRacialStatus();
-//	clock.setTime(secondsUntilRacist % secondsInAYear);
+	yearsUntilRacist = Math.floor(secondsUntilRacist / secondsInAYear);
+	monthsUntilRacist = Math.floor((secondsUntilRacist % secondsInAYear) / secondsInAMonth);
+	clock.setTime(secondsUntilRacist % secondsInAYear % secondsInAMonth);
+	yearclock.setTime((yearsUntilRacist * 60) + monthsUntilRacist);
 }
 
 function updateRacialStatus(){
