@@ -44,11 +44,6 @@ function setupRacismTimer(racismCounterId, racismProgressId, racismTimerId, raci
 //	racismRelativeTimeIntervalId = setInterval( function(){ updateRacismRelativeTime(); }, 1000);
 
 	updateQuestion();
-
-
-
-
-
 }
 function updateQuestion(){
 	var question = questions[questionIndex];
@@ -73,7 +68,6 @@ function updateQuestion(){
 }
 
 function updateRacismCounter(){
-	
 
 	racismCounterElt.innerHTML = racismQuestionCount+1;
 	racismProgressElt.value = racismQuestionCount+1;
@@ -329,6 +323,7 @@ function displayArticles(){
 function addArticlesToElt(articles, articlesElt){
 	var buffer = '<ul>';
 	for(var i=0; i < articles.length; i++){
+		if(i>4){ break; }
 		var article = articles[i]["title"];
 		var href = article["href"];
 		var text = article["text"];
@@ -342,6 +337,7 @@ function addArticlesToElt(articles, articlesElt){
 function didReadArticle () {
 	var hours = getRandomArbitary(0,24);
 	secondsUntilRacist += Math.floor(hours * 3600);
+	updateRacismCounter();
 }
 
 

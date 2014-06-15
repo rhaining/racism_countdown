@@ -23,7 +23,12 @@ body {
 	font-size: 50px;
 }
 #articles_wrapper a.article_link{
-	color: #fff;
+	color: #ddd;
+	text-decoration: none;
+}
+#articles_wrapper a.article_link:hover{
+	color: #D3D000;
+	background-color: #333;
 }
 #articles_wrapper .article_header{
 	font-size: 30px;
@@ -108,6 +113,18 @@ body {
 	max-width: 235px;
 	cursor: pointer;
 	color: #fff;
+}
+.answer label:hover{
+	color: #aaa;
+}
+.answer label:hover img{
+	opacity: 0.4;
+}
+.answer label:active{
+	color: #666;
+}
+.answer label:active img{
+	opacity: 0.2;
 }
 
 
