@@ -1,6 +1,6 @@
 body {
 	padding: 20px 3%;
-	color: #bbb;
+	color: #fff;
 	font-family: Baskerville;
 }
 
@@ -27,11 +27,11 @@ body {
 #articles_prompt{
 	font-size: 50px;
 }
-#articles_wrapper a.article_link{
+#articles_wrapper a{
 	color: #ddd;
 	text-decoration: none;
 }
-#articles_wrapper a.article_link:hover{
+#articles_wrapper a:hover{
 	color: #D3D000;
 	background-color: #333;
 }
@@ -41,24 +41,24 @@ body {
 }
 
 .cellspot{
-	border-radius:15px;
+	border-radius:10px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
 .cellspot_min{
-	border-radius:15px;
+	border-radius:10px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
 
 .purplebg{
-	background-color: #340843;
+	background-color: #878126;
 }
 .greybg{
-	background-color:#3D4956; /*4e5d6c; */
+	background-color:#863525; /*6C5D4E; */
 }
 .brownbg{
-	background-color:#52463A; /*6C5D4E; */
+	background-color:#3D4956; /*4e5d6c; */
 }
 
 .rowpad{
@@ -132,4 +132,7 @@ body {
 	opacity: 0.2;
 }
 
-
+#racism_status{
+	font-size: 35px;
+	line-height: 38px;
+}
