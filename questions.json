@@ -21,16 +21,17 @@ var questions = [
   },
   */
     {
-    "id":9,
-    "question":"Who do you most look up to?",
+    "id":8,
+    "question":"Are you racist?",
     "answers" : [
-      "Donald Sterling", "Paula Deen", "Jeremiah Wright", "Justin Bieber"
+      "Yes", "No"
     ],
     "images" : [
-      "donaldsterling.gif", "pauladeen.gif", "jeremiahwright.gif", "justinbieber.gif"
+      "yes.gif", "no.gif"
     ]
   },
-  {
+
+    {
     "id":3,
     "question":"Which cartoon character would win in a fight?",
     "answers" : [
@@ -40,6 +41,17 @@ var questions = [
       "mickeymouse.gif", "superman.gif", "rainbowbrite.gif", "daffyduck.gif"
     ]
   },
+    {
+    "id":9,
+    "question":"Who do you most look up to?",
+    "answers" : [
+      "Donald Sterling", "Paula Deen", "Jeremiah Wright", "Justin Bieber"
+    ],
+    "images" : [
+      "donaldsterling.gif", "pauladeen.gif", "jeremiahwright.gif", "justinbieber.gif"
+    ]
+  },
+
  {
     "id":4,
     "question":"Which of these words is most racist?",
@@ -70,18 +82,7 @@ var questions = [
     ]
   },
 */
-  {
-    "id":8,
-    "question":"Are you racist?",
-    "answers" : [
-      "Yes", "No"
-    ],
-    "images" : [
-      "yes.gif", "no.gif"
-    ]
-  },
 
-  
     {
     "id":6,
     "question":"You see a trolley barrelling down a hill. There are 5 Native Americans tied to the tracks. If you pull a lever, the trolley will change tracks and run over a Latina woman instead. What do you do?",

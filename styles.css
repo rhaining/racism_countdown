@@ -109,6 +109,18 @@ body {
 	cursor: pointer;
 	color: #fff;
 }
+.answer label:hover{
+	color: #aaa;
+}
+.answer label:hover img{
+	opacity: 0.6;
+}
+.answer label:active{
+	color: #666;
+}
+.answer label:active img{
+	opacity: 0.2;
+}
 
 
 
