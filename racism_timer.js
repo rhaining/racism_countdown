@@ -78,7 +78,9 @@ function updateFlipClock(){
 function updateRacismCounter(){
 
 	racismCounterElt.innerHTML = racismQuestionCount+1;
-	racismProgressElt.value = racismQuestionCount+1;
+//	racismProgressElt.value = racismQuestionCount+1;
+	//alert((racismQuestionCount+1)*20+"%");
+	document.getElementById("racprogbar").style.width=(racismQuestionCount)*20+"%";
 
 	if(racismQuestionCount >= 6){
 		// questionElt.style.display = 'none';
