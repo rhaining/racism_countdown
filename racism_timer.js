@@ -36,11 +36,6 @@ function setupRacismTimer(racismCounterId, racismProgressId, racismTimerId, raci
 	racismRelativeTimeIntervalId = setInterval( function(){ updateRacismRelativeTime(); }, 1000);
 
 	updateQuestion();
-
-
-
-
-
 }
 function updateQuestion(){
 	var question = questions[questionIndex];
@@ -66,7 +61,6 @@ function updateQuestion(){
 
 function updateRacismCounter(){
 	
-
 	racismCounterElt.innerHTML = racismQuestionCount+1;
 	racismProgressElt.value = racismQuestionCount+1;
 
@@ -333,6 +327,7 @@ function addArticlesToElt(articles, articlesElt){
 function didReadArticle () {
 	var hours = getRandomArbitary(0,24);
 	secondsUntilRacist += Math.floor(hours * 3600);
+	updateRacismCounter();
 }
 
 
