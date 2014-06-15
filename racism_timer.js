@@ -23,6 +23,7 @@ function setupRacismTimer(racismCounterId, racismProgressId, racismTimerId, raci
 	secondsUntilRacist = yearsUntilRacist * secondsInAYear;
 
 	updateRacismCounter();
+	updateRacismRelativeTime();
 	racismRelativeTimeIntervalId = setInterval( function(){ updateRacismRelativeTime(); }, 1000);
 
 	updateQuestion();

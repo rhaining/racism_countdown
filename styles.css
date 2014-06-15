@@ -1,5 +1,5 @@
 body {
-	padding: 20px 100px;
+	padding: 20px 3%;
 	color: #bbb;
 	font-family: Baskerville;
 }
@@ -62,8 +62,8 @@ body {
 
 }
 #answers img{
-	max-width: 320px;
-	max-height: 160px;
+	max-width: 300px;
+	max-height: 150px;
 }
 
 #racism_calendar_wrapper{
