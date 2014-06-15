@@ -7,17 +7,21 @@
 <script src="articles_tribune.json"></script>
 <script src="articles_reddit.json"></script>
 <script src="questions.json"></script>
-<script src="racism_timer.js"></script>
+<script language ="JavaScript" src="racism_timer.js"></script>
+<script language="JavaScript" src="jquery-2.1.1.min.js"></script>
+<script language="JavaScript" src="flipclock.min.js"></script>
+<link rel="stylesheet" href="flipclock.css">
 <link rel="stylesheet" href="bootstrap.min.css">
 <link rel="stylesheet" href="styles.css">
 
 <body>
 
 <div id="title_bar"><a href="index.html">Am I Racist Yet?</a></div>
-
+<div class="your-clock"></div>
 <div class="row rowpad">
 	<div class="col-md-12 purplebg cellspot_min">
 		<div id="racism_calendar_wrapper">You will be racist <span id="racism_calendar" class="highlight"></span></div>
+		<div class="clock"></div>
 		<div id="racism_timer"></div>
 	</div>
 </div>
@@ -69,11 +73,22 @@ The project was made with love in New York City at <a href="http://www.comedyhac
 (<a href="presentation.pdf">presentation</a>)
 </center>
 
+
+
+<script type="text/javascript">
+	var clock = $('.clock').FlipClock(3600 * 24 * 3, {
+		clockFace: 'DailyCounter',
+		countdown: true
+	});
+</script>
+
+
 </body>
 
 <script>
 setupRacismTimer("racism_counter", "racism_progress", "racism_timer", "racism_calendar", "racism_status", "question_wrapper");
 setupCurrentTime("current_time");
+
 </script>
 
 </html>
