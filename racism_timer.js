@@ -67,6 +67,14 @@ function updateQuestion(){
 	questionIndex++;
 }
 
+function updateFlipClock(){
+	yearsUntilRacist = Math.floor(secondsUntilRacist / secondsInAYear);
+	monthsUntilRacist = Math.floor((secondsUntilRacist % secondsInAYear) / secondsInAMonth);
+	clock.setTime(secondsUntilRacist % secondsInAYear % secondsInAMonth);
+	yearclock.setTime((yearsUntilRacist * 60) + monthsUntilRacist);
+}
+
+
 function updateRacismCounter(){
 
 	racismCounterElt.innerHTML = racismQuestionCount+1;
@@ -191,10 +199,11 @@ function goRacism(){
 	updateRacismCounter();
 	updateQuestion();
 	updateRacialStatus();
-	yearsUntilRacist = Math.floor(secondsUntilRacist / secondsInAYear);
-	monthsUntilRacist = Math.floor((secondsUntilRacist % secondsInAYear) / secondsInAMonth);
-	clock.setTime(secondsUntilRacist % secondsInAYear % secondsInAMonth);
-	yearclock.setTime((yearsUntilRacist * 60) + monthsUntilRacist);
+	updateFlipClock();
+//	yearsUntilRacist = Math.floor(secondsUntilRacist / secondsInAYear);
+//	monthsUntilRacist = Math.floor((secondsUntilRacist % secondsInAYear) / secondsInAMonth);
+//	clock.setTime(secondsUntilRacist % secondsInAYear % secondsInAMonth);
+//	yearclock.setTime((yearsUntilRacist * 60) + monthsUntilRacist);
 }
 
 function updateRacialStatus(){
@@ -341,9 +350,7 @@ function didReadArticle () {
 	var hours = getRandomArbitary(0,24);
 	secondsUntilRacist += Math.floor(hours * 3600);
 	updateRacismCounter();
+	updateFlipClock();
 }
-
-
-
 
 
