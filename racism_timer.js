@@ -11,6 +11,9 @@ var secondsInAMinute = 60;
 var questionIndex = 0;
 var racismRelativeTimeIntervalId = 0;
 
+var clock;
+
+
 function setupRacismTimer(racismCounterId, racismProgressId, racismTimerId, racismCalendarId, racismStatusId, questionId){
 	racismCounterElt = document.getElementById(racismCounterId);
 	racismProgressElt = document.getElementById(racismProgressId);
@@ -22,11 +25,22 @@ function setupRacismTimer(racismCounterId, racismProgressId, racismTimerId, raci
 	var yearsUntilRacist = getRandomInt(45,75);
 	secondsUntilRacist = yearsUntilRacist * secondsInAYear;
 
+
+	clock = $('.clock').FlipClock(secondsUntilRacist, {
+		clockFace: 'DailyCounter',
+		countdown: true
+	});
+
 	updateRacismCounter();
 	updateRacismRelativeTime();
 	racismRelativeTimeIntervalId = setInterval( function(){ updateRacismRelativeTime(); }, 1000);
 
 	updateQuestion();
+
+
+
+
+
 }
 function updateQuestion(){
 	var question = questions[questionIndex];
@@ -65,6 +79,7 @@ function updateRacismCounter(){
 	}
 
 	racismCalendarElt.innerHTML = currentRacismDate();
+	clock.setTime(secondsUntilRacist);
 }
 
 function updateRacismRelativeTime(){
