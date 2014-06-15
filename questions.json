@@ -87,8 +87,8 @@ var questions = [
     "id":6,
     "question":"You see a trolley barrelling down a hill. There are 5 Native Americans tied to the tracks. If you pull a lever, the trolley will change tracks and run over a Latina woman instead. What do you do?",
     "answers" : [
-      "Pull the lever and murder the Latina woman",
-      "Don't touch the lever and murder the Native Americans"
+      "Murder the Latina woman",
+      "Murder the Native Americans"
     ],
     "images" : [
       "sofiavergara.gif", "nativeamerican.gif"

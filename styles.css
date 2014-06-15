@@ -23,7 +23,12 @@ body {
 	font-size: 50px;
 }
 #articles_wrapper a.article_link{
-	color: #fff;
+	color: #ddd;
+	text-decoration: none;
+}
+#articles_wrapper a.article_link:hover{
+	color: #D3D000;
+	background-color: #333;
 }
 #articles_wrapper .article_header{
 	font-size: 30px;

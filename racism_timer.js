@@ -60,7 +60,7 @@ function updateQuestion(){
 }
 
 function updateRacismCounter(){
-	
+
 	racismCounterElt.innerHTML = racismQuestionCount+1;
 	racismProgressElt.value = racismQuestionCount+1;
 
@@ -314,6 +314,7 @@ function displayArticles(){
 function addArticlesToElt(articles, articlesElt){
 	var buffer = '<ul>';
 	for(var i=0; i < articles.length; i++){
+		if(i>4){ break; }
 		var article = articles[i]["title"];
 		var href = article["href"];
 		var text = article["text"];
