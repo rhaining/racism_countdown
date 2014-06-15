@@ -54,7 +54,7 @@ function updateQuestion(){
 		var imageBuffer = '';
 		if(question["images"]){
 			var imageURL = question["images"][i];
-			imageBuffer = "<img src='images/" + imageURL + "'/> ";
+			imageBuffer = "<img class ='img-rounded' src='images/" + imageURL + "'/> ";
 		}
 		answersBuffer += "<div class='answer'><input type='radio' name='question' id='ans" + i 
 						+ "' onclick='goRacism();'/><label for='ans" + i + "'><div>" 
