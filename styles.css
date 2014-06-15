@@ -3,6 +3,7 @@ body {
 	color: #bbb;
 	font-family: Baskerville;
 }
+
 #title_bar{
 	font-size: 50px;
 	text-align: center;
@@ -10,6 +11,10 @@ body {
 }
 #title_bar a{
 	color: #bbb;
+	text-decoration: none;
+}
+#title_bar a:hover{
+	color: #fff;
 }
 
 #answers{
