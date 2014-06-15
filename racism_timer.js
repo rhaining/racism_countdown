@@ -12,6 +12,7 @@ var questionIndex = 0;
 var racismRelativeTimeIntervalId = 0;
 
 var clock;
+var yearclock;
 
 
 function setupRacismTimer(racismCounterId, racismProgressId, racismTimerId, racismCalendarId, racismStatusId, questionId){
@@ -22,18 +23,25 @@ function setupRacismTimer(racismCounterId, racismProgressId, racismTimerId, raci
 	racismStatusElt = document.getElementById(racismStatusId);
 	questionElt = document.getElementById(questionId);
 
-	var yearsUntilRacist = getRandomInt(45,75);
+	var yearsUntilRacist = getRandomInt(40,60);
 	secondsUntilRacist = yearsUntilRacist * secondsInAYear;
 
 
-	clock = $('.clock').FlipClock(secondsUntilRacist, {
+	yearclock = $('.clock').FlipClock(60 * yearsUntilRacist, {
+		clockFace: 'MinuteCounter',
+		countdown: true,
+		autoStart: false,
+		language: 'german'
+	});
+	clock = $('.clock').FlipClock(secondsInAHour * yearsUntilRacist, {
 		clockFace: 'DailyCounter',
 		countdown: true
 	});
+//	clock.setTime(secondsUntilRacist % secondsInAYear)
 
 	updateRacismCounter();
-	updateRacismRelativeTime();
-	racismRelativeTimeIntervalId = setInterval( function(){ updateRacismRelativeTime(); }, 1000);
+//	updateRacismRelativeTime();
+//	racismRelativeTimeIntervalId = setInterval( function(){ updateRacismRelativeTime(); }, 1000);
 
 	updateQuestion();
 }
@@ -73,7 +81,7 @@ function updateRacismCounter(){
 	}
 
 	racismCalendarElt.innerHTML = currentRacismDate();
-	clock.setTime(secondsUntilRacist);
+//	clock.setTime(secondsUntilRacist % secondsInAYear);
 }
 
 function updateRacismRelativeTime(){
@@ -179,10 +187,14 @@ function goRacism(){
 		var randomPercent = getRandomArbitary(minPercent,maxPercent);
 		secondsUntilRacist += multiplier * (secondsUntilRacist * randomPercent);
 	}
-	updateRacismRelativeTime();
+//	updateRacismRelativeTime();
 	updateRacismCounter();
 	updateQuestion();
 	updateRacialStatus();
+	yearsUntilRacist = Math.floor(secondsUntilRacist / secondsInAYear);
+	monthsUntilRacist = Math.floor((secondsUntilRacist % secondsInAYear) / secondsInAMonth);
+	clock.setTime(secondsUntilRacist % secondsInAYear % secondsInAMonth);
+	yearclock.setTime((yearsUntilRacist * 60) + monthsUntilRacist);
 }
 
 function updateRacialStatus(){
