@@ -84,7 +84,7 @@ function updateRacismCounter(){
 
 	if(racismQuestionCount >= 6){
 		// questionElt.style.display = 'none';
-		document.getElementById("racism_counter_wrapper").style.display = 'none';
+		document.getElementById("racprogbar").style.display = 'none';
 		questionElt.innerHTML = "sorry you're about to be racist";
 		racismCounterElt.innerHTML = 6;
 		displayArticles();
