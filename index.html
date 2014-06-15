@@ -1,75 +1,61 @@
 <html>
 <head>
-	<title>Are you a racist?</title>
-<script src="racism_timer.js"></script>
-<style>
-
-#answers{
-	font-size: 24px;
-}
-#articles_wrapper{
-	display: none;
-}
-
-.cellspot{
-	border-radius:25px;
-	height: 500px;
-}
-
-.greybg{
-	background-color:#4e5d6c;
-}
-.greybg2{
-	background-color:#6C5D4E;
-}
-.rowpad{
-	padding:10px;
-}
-
-body {
-	padding: 100px;
-}
-.highlight{
-	color: white !important;
-}
-#answers img{
-	max-width: 150px;
-	max-height: 75px;
-
-}
-</style>
-<link rel="stylesheet" href="bootstrap.min.css">
+	<title>Am I a racist yet?</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 </head>
+
+<script src="articles_tribune.json"></script>
+<script src="articles_reddit.json"></script>
+<script src="questions.json"></script>
+<script src="racism_timer.js"></script>
+<link rel="stylesheet" href="bootstrap.min.css">
+<link rel="stylesheet" href="styles.css">
+
 <body>
 
-<center><h1>Am I Racist Yet?</h1></center>
+<div id="title_bar"><a href="index.html">Am I Racist Yet?</a></div>
+
 <div class="row rowpad">
-	<div class="col-md-8 greybg cellspot">
-		<h4>question <span id="racism_counter"></span> of 6</h4>
+	<div class="col-md-12 purplebg cellspot_min">
+		<div id="racism_calendar_wrapper">You will be racist <span id="racism_calendar" class="highlight"></span></div>
+		<div id="racism_timer"></div>
+	</div>
+</div>
+<div class="row rowpad">
+	<div class="col-md-12 greybg cellspot">
+
 			<div id="question_wrapper">
-				<h3 id="question">Is this a sample question?</h3>
-				<div id="answers"></div>
+				<div id="question"></div>
+				<fieldset>
+					<div id="answers"></div>
+				</fieldset>
 			</div>
 
-					<div id="articles_wrapper">
-		<h3>A few articles about racism to help you out</h3>
-		<div id="articles"></div>
-		<h4>Courtesy of <a href="http://www.kimonolabs.com/">Kimono Labs</a> & the <a href="http://www.chicagotribune.com/">Chicago Tribune</a></h4>
-		</div>
+			<div id="articles_wrapper">
+				<div id="articles_prompt">A few articles about racism to help you out</div>
+				<div class="col-md-6">
+					<div class="article_header"><a href="http://www.chicagotribune.com/">Chicago Tribune</a></div>
+					<div id="articles_tribune"></div>
+				</div>
+				<div class="col-md-6">
+					<div class="article_header"><a href="http://www.reddit.com/">Reddit</a></div>
+					<div id="articles_reddit"></div>
+				</div>
+				<div class="col-md-12">
+					<h4>Courtesy of <a href="http://www.kimonolabs.com/">Kimono Labs</a></h4>
+				</div>
+			</div>
+
+		<h4 id="racism_counter_wrapper"><span id="racism_counter"></span> of 6 <meter id="racism_progress" min=1 max=6 value=1></meter></h4>
 
 	</div>
-	<div class="col-md-4 greybg2 cellspot">
-		<h3>current status:</h3>
+</div>
+<div class="row rowpad">
+	<div class="col-md-12 brownbg cellspot">
 		<blockquote>
 			<span id="racism_status">Based on your current location <strong>(NYC)</strong><br>
 			the current time <strong>(<span id="current_time"></span>)</strong><br> and your skin tone <strong>(lovely)</strong><br> we've determined you're: <strong><span class="highlight">post racial</span></strong></span>
 		</blockquote>
-		<br/>
-		<h2>
-		<div id="racism_timer"></div>
-		<div id="racism_calendar" class="highlight"></div>
-	</h2>
-
 	</div>
 
 
@@ -86,7 +72,7 @@ The project was made with love in New York City at <a href="http://www.comedyhac
 </body>
 
 <script>
-setupRacismTimer("racism_counter", "racism_timer", "racism_calendar", "racism_status", "question_wrapper");
+setupRacismTimer("racism_counter", "racism_progress", "racism_timer", "racism_calendar", "racism_status", "question_wrapper");
 setupCurrentTime("current_time");
 </script>
 

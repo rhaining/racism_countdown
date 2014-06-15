@@ -1,5 +1,5 @@
 
-var racismCounterElt, racismTimerElt, racismCalendarElt, racismStatusElt, questionElt;
+var racismCounterElt, racismProgressElt, racismTimerElt, racismCalendarElt, racismStatusElt, questionElt;
 var racismQuestionCount = 0;
 var secondsUntilRacist = 0;
 var secondsInAYear = 31540000;
@@ -9,9 +9,11 @@ var secondsInADay = 86400;
 var secondsInAHour = 3600;
 var secondsInAMinute = 60;
 var questionIndex = 0;
+var racismRelativeTimeIntervalId = 0;
 
-function setupRacismTimer(racismCounterId, racismTimerId, racismCalendarId, racismStatusId, questionId){
+function setupRacismTimer(racismCounterId, racismProgressId, racismTimerId, racismCalendarId, racismStatusId, questionId){
 	racismCounterElt = document.getElementById(racismCounterId);
+	racismProgressElt = document.getElementById(racismProgressId);
 	racismTimerElt = document.getElementById(racismTimerId);
 	racismCalendarElt = document.getElementById(racismCalendarId);
 	racismStatusElt = document.getElementById(racismStatusId);
@@ -21,6 +23,7 @@ function setupRacismTimer(racismCounterId, racismTimerId, racismCalendarId, raci
 	secondsUntilRacist = yearsUntilRacist * secondsInAYear;
 
 	updateRacismCounter();
+	racismRelativeTimeIntervalId = setInterval( function(){ updateRacismRelativeTime(); }, 1000);
 
 	updateQuestion();
 }
@@ -35,7 +38,9 @@ function updateQuestion(){
 			var imageURL = question["images"][i];
 			imageBuffer = "<img src='images/" + imageURL + "'/> ";
 		}
-		answersBuffer += "<input type='radio' name='question' onclick='goRacism();'/> " + imageBuffer + answer + "<br/><br/>";
+		answersBuffer += "<div class='answer'><input type='radio' name='question' id='ans" + i 
+						+ "' onclick='goRacism();'/><label for='ans" + i + "'><div>" 
+						+ imageBuffer + "</div><div>" + answer + "</div></label></div>";
 	}
 
 	var answersElt = document.getElementById("answers");
@@ -45,55 +50,104 @@ function updateQuestion(){
 }
 
 function updateRacismCounter(){
-	var value, label, level;
-	if(secondsUntilRacist > secondsInAYear){
-		value = secondsUntilRacist / secondsInAYear;
-		label = "years";
-		level= (secondsUntilRacist > secondsInAYear * 20) ? 7 : 6;
-	}else if(secondsUntilRacist > secondsInAMonth){
-		value = secondsUntilRacist / secondsInAMonth;
-		label = "months";
-		level = 6;
-	}else if(secondsUntilRacist > secondsInAWeek){
-		value = secondsUntilRacist / secondsInAWeek;
-		label = "weeks";
-		level = 5;
-	}else if(secondsUntilRacist > secondsInADay){
-		value = secondsUntilRacist / secondsInADay;
-		label = "days";
-		level = 4;
-	}else if(secondsUntilRacist > secondsInAHour){
-		value = secondsUntilRacist / secondsInAHour;
-		label = "hours";
-		level = 3;
-	}else if(secondsUntilRacist > secondsInAMinute){
-		value = secondsUntilRacist / secondsInAMinute;
-		label = "minutes";
-		level = 2;
-	}else if(secondsUntilRacist > 0){
-		value = secondsUntilRacist;
-		label = "seconds";
-		level=1;
-	}else if(secondsUntilRacist <= 0){
-		value = "0";
-		label = "seconds";
-		level=0;
-	}
-
-	value = Math.round(value * 10) / 10;
-	racismTimerElt.innerHTML = "You have <span class='highlight'>" + value + " " + label + "</span> until you're racist";		
-	updateRacialStatus(level);
+	
 
 	racismCounterElt.innerHTML = racismQuestionCount+1;
+	racismProgressElt.value = racismQuestionCount+1;
 
 	if(racismQuestionCount >= 6){
 		// questionElt.style.display = 'none';
-		questionElt.innerHTML = "game over";
+		document.getElementById("racism_counter_wrapper").style.display = 'none';
+		questionElt.innerHTML = "sorry you're about to be racist";
 		racismCounterElt.innerHTML = 6;
 		displayArticles();
 	}
 
 	racismCalendarElt.innerHTML = currentRacismDate();
+}
+
+function updateRacismRelativeTime(){
+	if(secondsUntilRacist <= 0){
+		secondsUntilRacist = 0;
+		clearInterval(racismRelativeTimeIntervalId);
+	}
+
+	var seconds = secondsUntilRacist;
+
+	var shouldHighlight = false;
+	var buffer = '';
+	var years = Math.floor(seconds / secondsInAYear);
+	if(shouldHighlight || years > 0){
+		buffer += '<span class="highlight">';
+		shouldHighlight = true;
+	}else{
+		buffer += '<span>';
+	}
+	buffer += years + ' years, </span>';
+	seconds %= secondsInAYear;
+
+	var months = Math.floor(seconds / secondsInAMonth);
+	if(shouldHighlight || months > 0){
+		buffer += '<span class="highlight">';
+		shouldHighlight = true;
+	}else{
+		buffer += '<span>';
+	}
+	buffer += months + ' months, </span>';
+	seconds %= secondsInAMonth;
+
+	var weeks = Math.floor(seconds / secondsInAWeek);
+	if(shouldHighlight || weeks > 0){
+		buffer += '<span class="highlight">';
+		shouldHighlight = true;
+	}else{
+		buffer += '<span>';
+	}
+	buffer += weeks + ' weeks, </span>';
+	seconds %= secondsInAWeek;
+
+	var days = Math.floor(seconds / secondsInADay);
+	if(shouldHighlight || days > 0){
+		buffer += '<span class="highlight">';
+		shouldHighlight = true;
+	}else{
+		buffer += '<span>';
+	}
+	buffer += days + ' days, </span>';
+	seconds %= secondsInADay;
+
+	var hours = Math.floor(seconds / secondsInAHour);
+	if(shouldHighlight || hours > 0){
+		buffer += '<span class="highlight">';
+		shouldHighlight = true;
+	}else{
+		buffer += '<span>';
+	}
+	buffer += hours + ' hours, </span>';
+	seconds %= secondsInAHour;
+
+	var minutes = Math.floor(seconds / secondsInAMinute);
+	if(shouldHighlight || minutes > 0){
+		buffer += '<span class="highlight">';
+		shouldHighlight = true;
+	}else{
+		buffer += '<span>';
+	}
+	buffer += minutes + ' minutes, </span>';
+	seconds %= secondsInAMinute;
+
+	var seconds = Math.floor(seconds);
+	if(shouldHighlight || seconds > 0){
+		buffer += '<span class="highlight">';
+		shouldHighlight = true;
+	}else{
+		buffer += '<span>';
+	}
+	buffer += seconds + ' seconds</span>';
+
+	racismTimerElt.innerHTML = buffer;
+
+	secondsUntilRacist--;
 }
 
 function goRacism(){
@@ -115,14 +169,15 @@ function goRacism(){
 		var randomPercent = getRandomArbitary(minPercent,maxPercent);
 		secondsUntilRacist += multiplier * (secondsUntilRacist * randomPercent);
 	}
+	updateRacismRelativeTime();
 	updateRacismCounter();
 	updateQuestion();
+	updateRacialStatus();
 }
 
-function updateRacialStatus(level){
-	if(level == 7){ return; }
+function updateRacialStatus(){
 
-	level = getRandomInt(1,6);
+	var level = getRandomInt(1,6);
 	switch(level){
 		case 0:
 			setRacialStatus("Sorry, you're already racist");
@@ -145,9 +200,6 @@ function updateRacialStatus(level){
 		case 6:
 			setRacialStatus("Watch more racially diverse movies");
 			break;
-		// case 7:
-			//setRacialStatus("Post Racial");
-			// break;
 		default:
 			break;
 	}
@@ -202,9 +254,13 @@ function currentRacismDate(){
 	var readableDay;
 
 	if(currentDate.getMonth() == dt.getMonth() 
-		&& currentDate.getFullYear() == dt.getFullYear() 
+		&& currentDate.getFullYear() == dt.getFullYear()
 		&& currentDate.getDate() == dt.getDate()){
 		readableDay = "today";
+	}else if(currentDate.getMonth() == dt.getMonth() 
+		&& currentDate.getFullYear() == dt.getFullYear() 
+		&& currentDate.getDate()+1 == dt.getDate()){
+		readableDay = "tomorrow";
 	}else{
 		var month = readableMonth(dt.getMonth());
 		var day = dt.getDate();
@@ -238,186 +294,32 @@ function readableMonth(monthValue){
 function displayArticles(){
 	var articlesWrapperElt = document.getElementById("articles_wrapper");
 	articlesWrapperElt.style.display = "inherit";
-	var articlesElt = document.getElementById("articles");
-	var buffer = '';
+	
+	var tribuneArticlesElt = document.getElementById("articles_tribune");
+	addArticlesToElt(articles_tribune, tribuneArticlesElt);
+	
+	var redditArticlesElt = document.getElementById("articles_reddit");
+	addArticlesToElt(articles_reddit, redditArticlesElt);
+}
+function addArticlesToElt(articles, articlesElt){
+	var buffer = '<ul>';
 	for(var i=0; i < articles.length; i++){
 		var article = articles[i]["title"];
 		var href = article["href"];
 		var text = article["text"];
-		var row = "<a href='" + href + "'>" + text + "</a><br/>";
+		var row = "<li><a class='article_link' href='" + href + "' target='_blank' onclick='didReadArticle();'>" + text + "</a></li>";
 		buffer += row;
 	}
+	buffer += '</ul';
 	articlesElt.innerHTML = buffer;
 }
 
-
-/////// data
-
-var questions = [
-/*
-  {
-    "id":1,
-    "question":"How many friends do you have of a different race?",
-    "answers" : [
-      "0", "1-10", "11-1000", "prefer not to answer"
-    ]
-  },
-  */
-/*
-  {
-    "id":2,
-    "question":"What is your age?",
-    "answers" : [
-      "0-18", "19-34", "35-60", "61-114"
-    ],
-    "images" : [
-      "shirleytemple.gif", "aubreyplaza.gif", "billmurray.gif", "beaarthur.gif"
-    ]
-  },
-  */
-    {
-    "id":9,
-    "question":"Who do you most look up to?",
-    "answers" : [
-      "Donald Sterling", "Paula Deen", "Jeremiah Wright", "Justin Bieber"
-    ],
-    "images" : [
-      "donaldsterling.gif", "pauladeen.gif", "jeremiahwright.gif", "justinbieber.gif"
-    ]
-  },
-  {
-    "id":3,
-    "question":"Which cartoon character would win in a fight?",
-    "answers" : [
-      "Mickey Mouse", "Superman", "Rainbow Brite", "Daffy Duck"
-    ],
-    "images" : [
-      "mickeymouse.gif", "superman.gif", "rainbowbrite.gif", "daffyduck.gif"
-    ]
-  },
- {
-    "id":4,
-    "question":"Which of these words is most racist?",
-    "answers" : [
-      "Wizard of Oz", "Parking Lot", "Light Bulb", "Centennial"
-    ],
-    "images" : [
-      "wizardofoz.gif", "parkinglot.gif", "lightbulb.gif", "centennial.gif"
-    ]
-  },
-
-  {
-    "id":7,
-    "question":"Who do you most identify with?",
-    "answers" : [
-      "Dr Phil", "Oprah", "Goofy"
-    ],
-    "images" : [
-      "drphil.gif", "oprah.gif", "goofy.gif"
-    ]
-  },
-  /*
-  {
-    "id":5,
-    "question":"Which backstreet boy are you? (Link to quiz if you need help)",
-    "answers" : [
-      "AJ", "Howie", "Nick", "Kevin", "Brian"
-    ]
-  },
-*/
-  {
-    "id":8,
-    "question":"Are you racist?",
-    "answers" : [
-      "Yes", "No"
-    ],
-    "images" : [
-      "yes.gif", "no.gif"
-    ]
-  },
-
-  
-    {
-    "id":6,
-    "question":"You see a trolley barrelling down a hill. There are 5 Native Americans tied to the tracks. If you pull a lever, the trolley will change tracks and run over a Latina woman instead. What do you do?",
-    "answers" : [
-      "Pull the lever and murder the Latina woman",
-      "Don't touch the lever and murder the Native Americans"
-    ],
-    "images" : [
-      "sofiavergara.gif", "nativeamerican.gif"
-    ]
-  }
-]
+function didReadArticle () {
+	var hours = getRandomArbitary(0,24);
+	secondsUntilRacist += Math.floor(hours * 3600);
+}
 
 
 
 
-var articles = [
-      {
-        "title": {
-          "text": "Probate trial set for Donald Sterling",
-          "href": "http://www.chicagotribune.com/sports/basketball/bulls/chi-trial-will-decide-which-sterling-controls-la-clippers-20140611,0,4249248.story"
-        }
-      },
-      {
-        "title": {
-          "text": "Paula Deen launching online cooking network",
-          "href": "http://www.chicagotribune.com/features/food/chi-paula-deen-network-online-20140611,0,2240994.story"
-        }
-      },
-      {
-        "title": {
-          "text": "Where are players in George Zimmerman trial, a year later?",
-          "href": "http://www.chicagotribune.com/news/ch-george-zimmerman-trial-one-year-later-20140607,0,3489606.story"
-        }
-      },
-      {
-        "title": {
-          "text": "Tinley Park police reports: Man punched for aiding woman",
-          "href": "http://www.chicagotribune.com/news/local/suburbs/tinley_park/ct-police-blotter-tinley-park-tl-s-xxxx-20140603-21,0,2378976.story"
-        }
-      },
-      {
-        "title": {
-          "text": "Teacher's lesson about racism offends his bosses",
-          "href": "http://www.chicagotribune.com/news/columnists/kass/ct-kass-met-0605-20140605,0,7689455.column"
-        }
-      },
-      {
-        "title": {
-          "text": "Donald Sterling accused of racist, sexist remarks in new lawsuit",
-          "href": "http://www.chicagotribune.com/sports/basketball/bulls/chi-donald-sterling-accused-of-racist-sexist-remarks-20140603,0,3203338.story"
-        }
-      },
-      {
-        "title": {
-          "text": "Clippers owner Donald Sterling will sue NBA for $1 billion",
-          "href": "http://www.chicagotribune.com/news/chi-clippers-donald-sterling-sues-nba-20140530,0,5041780.story"
-        }
-      },
-      {
-        "title": {
-          "text": "Donald Sterling plans to sue the NBA",
-          "href": "http://www.chicagotribune.com/sports/basketball/bulls/chi-donald-sterling-sue-nba-20140530,0,600145.story"
-        }
-      },
-      {
-        "title": {
-          "text": "Meet the black officer who went undercover as a KKK member",
-          "href": "http://www.chicagotribune.com/news/plus/chi-wp-theroot-black-officer-kkk-20140523,0,7002089.story"
-        }
-      },
-      {
-        "title": {
-          "text": "Donald Sterling hands over control of Clippers to wife: reports",
-          "href": "http://www.chicagotribune.com/news/chi-donald-sterling-clippers-20140523,0,5856995.story"
-        }
-      },
-      {
-        "title": {
-          "text": "Redskins president Allen defends team name",
-          "href": "http://www.chicagotribune.com/sports/football/bears/chi-redskins-president-defends-name-20140524,0,5955549.story"
-        }
-      }
-    ];
+

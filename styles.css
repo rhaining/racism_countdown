@@ -1,0 +1,110 @@
+body {
+	padding: 20px 100px;
+	color: #bbb;
+	font-family: Baskerville;
+}
+#title_bar{
+	font-size: 50px;
+	text-align: center;
+	width: 100%;
+}
+#title_bar a{
+	color: #bbb;
+}
+
+#answers{
+	font-size: 24px;
+}
+#articles_wrapper{
+	display: none;
+	font-size: 40px;
+}
+#articles_prompt{
+	font-size: 50px;
+}
+#articles_wrapper a.article_link{
+	color: #fff;
+}
+#articles_wrapper .article_header{
+	font-size: 30px;
+	font-style: oblique;
+}
+
+.cellspot{
+	border-radius:15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.cellspot_min{
+	border-radius:15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.purplebg{
+	background-color: #340843;
+}
+.greybg{
+	background-color:#3D4956; /*4e5d6c; */
+}
+.brownbg{
+	background-color:#52463A; /*6C5D4E; */
+}
+
+.rowpad{
+	padding:10px;
+}
+
+
+.highlight{
+	color: #fff !important;
+	font-size: 1.2em;
+
+}
+#answers img{
+	max-width: 320px;
+	max-height: 160px;
+}
+
+#racism_calendar_wrapper{
+	font-size: 24px;
+}
+#racism_calendar{
+	font-size: 40px;
+	margin-left: 5px;
+}
+#racism_timer{
+	font-size: 35px;
+}
+#racism_counter_wrapper meter{
+	margin-left: 10px;
+}
+
+#question{
+	font-size: 50px;
+	line-height: 55px;
+	margin-bottom: 10px;
+	color: #fff;
+}
+.answer{
+	float: left;
+	padding-right: 40px;
+	cursor: pointer;
+}
+.answer input{
+	float: left;
+	margin-right: 10px;
+}
+.answer img{
+	padding-bottom: 10px;
+}
+.answer label{
+	font-size: 30px;
+	line-height: 35px;
+	max-width: 300px;
+	cursor: pointer;
+	color: #fff;
+}
+
+
+

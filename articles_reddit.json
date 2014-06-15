@@ -1,0 +1,152 @@
+var articles_reddit =  [
+      {
+        "title": {
+          "text": "The Racism Beat",
+          "href": "https://medium.com/@cordjefferson/the-racism-beat-6ff47f76cbb6"
+        }
+      },
+      {
+        "title": {
+          "text": "Neil DeGrasse Tyson: You Won't Believe What These Fox News Contributors Had to Say About Him",
+          "href": "http://atlantablackstar.com/2014/06/10/neil-degrasse-tyson-you-wont-believe-what-these-fox-news-contributors-had-to-say-about-him/"
+        }
+      },
+      {
+        "title": {
+          "text": "Torrence Collier, 11, says he faces racism, extreme bullying in Westport (Canada)",
+          "href": "http://www.cbc.ca/news/canada/newfoundland-labrador/torrence-collier-11-says-he-faces-racism-extreme-bullying-in-westport-1.2671343"
+        }
+      },
+      {
+        "title": {
+          "text": "Colour runs--now cultural appropriation can be enjoyed without any mention of the culture from which it's being expropriated",
+          "href": "http://www.thealbatross.ca/27335/colour-runs-are-a-faux-charity-scam"
+        }
+      },
+      {
+        "title": {
+          "text": "A racist saudi man traps a Bengladeshi worker in his car, repeatedely assaults him, calls him an animal, makes him kiss his hands and feet. Disgraceful.",
+          "href": "https://www.facebook.com/photo.php?v=707706889307088&set=vb.185838578160591&type=2&theater"
+        }
+      },
+      {
+        "title": {
+          "text": "Alabama Schools Caught Discriminating Against Undocumented Kids",
+          "href": "http://colorlines.com/archives/2014/06/alabama_schools_caught_discriminating_against_undocumented_kids.html"
+        }
+      },
+      {
+        "title": {
+          "text": "Police Violence: The American Experience of Systemic Racism",
+          "href": "http://guardianlv.com/2014/06/police-violence-the-american-experience-of-systemic-racism/#fGMB2DcvmoMV4y2u.16"
+        }
+      },
+      {
+        "title": {
+          "text": "How Neuroscience Reinforces Racist Drug Policy",
+          "href": "http://www.theatlantic.com/health/archive/2014/06/how-bad-neuroscience-reinforces-racist-drug-policy/371378/?utm_content=buffer319d6&utm_medium=social&utm_source=facebook.com&utm_campaign=buffer"
+        }
+      },
+      {
+        "title": {
+          "text": "Was just denied buying items at mouser.com because of my name.",
+          "href": "http://www.reddit.com/r/racism/comments/27zkj2/was_just_denied_buying_items_at_mousercom_because/"
+        }
+      },
+      {
+        "title": {
+          "text": "Shock value: How Aamer Rahman's 'reverse racism' joke saved his career",
+          "href": "http://www.theguardian.com/stage/2014/jun/04/aamer-rahman-reverse-racism-comedy-tour?CMP=twt_gu"
+        }
+      },
+      {
+        "title": {
+          "text": "Helter Skelter: connecting some of the dots of white supremacist violence",
+          "href": "http://crommunist.com/2014/06/10/helter-skelter-connecting-some-of-the-dots-of-white-supremacist-violence/"
+        }
+      },
+      {
+        "title": {
+          "text": "Happy Loving Day! Honouring the couple that started it all.",
+          "href": "http://art.zerflin.com/wp-content/uploads/2014/05/Mildred-and-Richard-Loving-4-01.jpg"
+        }
+      },
+      {
+        "title": {
+          "text": "Beware, There Are A**Holes Amongst Us. A Horrible Grindr-Fail of Discrimination.",
+          "href": "http://www.buzzfeed.com/bshahwan/beware-there-are-aholes-amongst-us-rv6f"
+        }
+      },
+      {
+        "title": {
+          "text": "I’m not a racist, but sometimes I think like one",
+          "href": "http://www.independent.co.uk/voices/comment/im-not-a-racist-but-sometimes-i-think-like-one-9528715.html"
+        }
+      },
+      {
+        "title": {
+          "text": "Dr. Sikivu Hutchinson - Feminism, Freethought and the 99%",
+          "href": "https://www.facebook.com/events/514677865321585/#.U5jc9maHICY.reddit"
+        }
+      },
+      {
+        "title": {
+          "text": "Sticks and Stones: Freedom of Speech and Racial Discrimination",
+          "href": "http://camerontout.wordpress.com/2014/06/12/sticks-and-stones-freedom-of-speech-and-racial-discrimination/"
+        }
+      },
+      {
+        "title": {
+          "text": "Passing for Black: Is It Ever OK?",
+          "href": "http://www.theroot.com/articles/culture/2014/06/passing_for_black_is_it_ever_ok.html"
+        }
+      },
+      {
+        "title": {
+          "text": "Navi Pillay warns against mounting racism in Europe",
+          "href": "http://www.euractiv.com/sections/eu-elections-2014/navi-pillay-warns-against-mounting-racism-europe-302717"
+        }
+      },
+      {
+        "title": {
+          "text": "Statistics Indicate an Ivy League Asian Quota",
+          "href": "http://www.nytimes.com/roomfordebate/2012/12/19/fears-of-an-asian-quota-in-the-ivy-league/statistics-indicate-an-ivy-league-asian-quota"
+        }
+      },
+      {
+        "title": {
+          "text": "French Ghettos, Police Violence and Racism",
+          "href": "http://www.globalresearch.ca/french-ghettos-police-violence-and-racism/1214"
+        }
+      },
+      {
+        "title": {
+          "text": "Culinary appopriation?",
+          "href": "http://www.reddit.com/r/racism/comments/27vi2h/culinary_appopriation/"
+        }
+      },
+      {
+        "title": {
+          "text": "'Guns Kept People Alive' During The Civil Rights Movement : NPR",
+          "href": "http://www.npr.org/2014/06/05/319072156/guns-kept-people-alive-during-the-civil-rights-movement?utm_campaign=storyshare&utm_source=twitter.com&utm_medium=social"
+        }
+      },
+      {
+        "title": {
+          "text": "Racism, Colonialism and White Supremacy Are Everywhere in Video Games | Black Like Moi",
+          "href": "http://blacklikemoi.com/2014/06/racism-colonialism-white-supremacy-everywhere-video-games/#.U5fJNUdlpLc.reddit"
+        }
+      },
+      {
+        "title": {
+          "text": "Ads Against Apartheid 'ONE WORD' ad campain launched in Boston",
+          "href": "http://mondoweiss.net/2014/06/shocking-reality-ground.html"
+        }
+      },
+      {
+        "title": {
+          "text": "Watch The Anti-Redskins Commercial That Will Run During The NBA Finals",
+          "href": "http://deadspin.com/heres-the-anti-redskins-commercial-that-will-run-during-1588597037"
+        }
+      }
+    ]

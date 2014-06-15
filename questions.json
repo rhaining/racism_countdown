@@ -1,0 +1,96 @@
+var questions = [
+/*
+  {
+    "id":1,
+    "question":"How many friends do you have of a different race?",
+    "answers" : [
+      "0", "1-10", "11-1000", "prefer not to answer"
+    ]
+  },
+  */
+/*
+  {
+    "id":2,
+    "question":"What is your age?",
+    "answers" : [
+      "0-18", "19-34", "35-60", "61-114"
+    ],
+    "images" : [
+      "shirleytemple.gif", "aubreyplaza.gif", "billmurray.gif", "beaarthur.gif"
+    ]
+  },
+  */
+    {
+    "id":9,
+    "question":"Who do you most look up to?",
+    "answers" : [
+      "Donald Sterling", "Paula Deen", "Jeremiah Wright", "Justin Bieber"
+    ],
+    "images" : [
+      "donaldsterling.gif", "pauladeen.gif", "jeremiahwright.gif", "justinbieber.gif"
+    ]
+  },
+  {
+    "id":3,
+    "question":"Which cartoon character would win in a fight?",
+    "answers" : [
+      "Mickey Mouse", "Superman", "Rainbow Brite", "Daffy Duck"
+    ],
+    "images" : [
+      "mickeymouse.gif", "superman.gif", "rainbowbrite.gif", "daffyduck.gif"
+    ]
+  },
+ {
+    "id":4,
+    "question":"Which of these words is most racist?",
+    "answers" : [
+      "Wizard of Oz", "Parking Lot", "Light Bulb", "Centennial"
+    ],
+    "images" : [
+      "wizardofoz.gif", "parkinglot.gif", "lightbulb.gif", "centennial.gif"
+    ]
+  },
+
+  {
+    "id":7,
+    "question":"Who do you most identify with?",
+    "answers" : [
+      "Dr Phil", "Oprah", "Goofy"
+    ],
+    "images" : [
+      "drphil.gif", "oprah.gif", "goofy.gif"
+    ]
+  },
+  /*
+  {
+    "id":5,
+    "question":"Which backstreet boy are you? (Link to quiz if you need help)",
+    "answers" : [
+      "AJ", "Howie", "Nick", "Kevin", "Brian"
+    ]
+  },
+*/
+  {
+    "id":8,
+    "question":"Are you racist?",
+    "answers" : [
+      "Yes", "No"
+    ],
+    "images" : [
+      "yes.gif", "no.gif"
+    ]
+  },
+
+  
+    {
+    "id":6,
+    "question":"You see a trolley barrelling down a hill. There are 5 Native Americans tied to the tracks. If you pull a lever, the trolley will change tracks and run over a Latina woman instead. What do you do?",
+    "answers" : [
+      "Pull the lever and murder the Latina woman",
+      "Don't touch the lever and murder the Native Americans"
+    ],
+    "images" : [
+      "sofiavergara.gif", "nativeamerican.gif"
+    ]
+  }
+]
