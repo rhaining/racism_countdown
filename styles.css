@@ -62,8 +62,12 @@ body {
 
 }
 #answers img{
+	width: 235px;
+	height: auto;
+	/*
 	max-width: 300px;
 	max-height: 150px;
+	*/
 }
 
 #racism_calendar_wrapper{
@@ -101,7 +105,7 @@ body {
 .answer label{
 	font-size: 30px;
 	line-height: 35px;
-	max-width: 300px;
+	max-width: 235px;
 	cursor: pointer;
 	color: #fff;
 }
