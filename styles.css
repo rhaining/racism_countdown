@@ -62,7 +62,7 @@ body {
 
 }
 #answers img{
-	width: 225px;
+	width: 235px;
 	height: auto;
 	/*
 	max-width: 300px;
@@ -105,7 +105,7 @@ body {
 .answer label{
 	font-size: 30px;
 	line-height: 35px;
-	max-width: 225px;
+	max-width: 235px;
 	cursor: pointer;
 	color: #fff;
 }
